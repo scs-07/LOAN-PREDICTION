@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{% block result %}
+<div style="background-image: url(./static/images/mainimg.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+    <div class="container" style="height: 3px;">
+        <a href="/ff"><button class="btn btn-primary btn-lg float-right mt-2">Form</button></a>
+        <a href="/"><button class="btn btn-primary btn-lg float-left mt-2">Main</button></a><br>
+    </div><br><br><br>
+    <div class="container col-md-6" style="opacity: 0.9;">
+     
+        <h1>Hello {{result['name']}}!</h1><br>
+        <div class="card">
+            <div class="card-header">
+                <h2>Your Result Card</h2>
+            </div>
+            <div class="card-body">
+              <table style="width:100%">
+                {% for key,value in result.items() %}
+               <tr>
+                 <th>{{key}}</td>
+                  <td>{{value}}</td>
+               </tr>
+	{% endfor %}
+                </table>
+                <p id="danger" style="font-size: 23px; color: red;"></p>
+                <p id="safe" style="font-size: 23px; color: Green;"></p>
+                <!---<h2 class="text-danger">Final Result : {{result['result']}}</h2>--->
+              	{% if  result['result'] ==0 %}
+                  	<script>
+                         document.getElementById("safe").innerHTML = "Your Loan Amount has been Sanctioned";
+                   		   //alert("Your Loan Amount has been Sanctioned")
+                    </script>
+                	{% endif %}
+
+                	{% if  result['result'] ==1 %}
+                  	<script>
+                        document.getElementById("danger").innerHTML = "Your Loan Amount is With_held";
+              		      //alert("Your Loan Amount is With_held")
+                    </script>
+                	{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+ {%endblock%}

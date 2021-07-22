@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block form%}
+<div style="background-image: url(./static/images/bgimage.png); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% auto;">
+    <div class="container">
+        <a href="/"><button class="btn btn-primary btn-lg float-right mt-3">Main</button></a><br>
+    </div>
+    <div class="container col-xs-5 col-md-4 mt-5" style="opacity: 0.8;">
+        <div class="card">
+            <div class="card-header">
+                <h3>Data Taking For Predection</h3>
+            </div>
+            <div class="card-body">
+                <form action="predict" method="POST">
+                    <div class="form-group">
+                        <label for="name"><b>Name</b></label>
+                        <input type="text" name="name" placeholder="Enter Your Name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sex"><b>Gender</b></label> <br>
+                        <input type="radio" required name="sex" value="0" required><label for="male">&nbsp;Male&nbsp;</label>
+                        <input type="radio" required name="sex" value="1" ><label for="female">&nbsp;Female&nbsp;</label>
+                    </div>
+ 	    <div class="form-group">
+                        <label for="Married"><b>Marital Status</b></label> <br>
+                        <input type="radio" required name="Married" value="0" required><label for="Married">&nbsp;Married&nbsp;</label>
+                        <input type="radio" required name="Married" value="1" ><label for="UnMarried">&nbsp;UnMarried&nbsp;</label>
+                    </div>
+	 
+
+	    <div class="form-group">
+                        <label for="Dependency"><b>Dependents</b></label> <br>
+                        <input type="radio" required name="Dependency" value="1" required><label for="1">&nbsp;Dependency with 1 &nbsp;</label>
+                        <input type="radio" required name="Dependency" value="2"><label for="2">&nbsp;Dependency with 2 &nbsp;</label><br>
+	        <input type="radio" required name="Dependency" value="3+"><label for="3+">&nbsp;Dependency with > 3&nbsp;</label>
+                    </div>
+	    <div class="form-group">
+                        <label for="Graduate"><b>Education Details</b></label> <br>
+                        <input type="radio" required name="Graduate" value="0" ><label for="Graduate">&nbsp;Graduate&nbsp;</label>
+                        <input type="radio" required name="Graduate" value="1" ><label for="NotGraduate">&nbsp;NotGraduate&nbsp;</label>
+                    </div>
+                    
+	    <div class="form-group">
+                        <label for="Self_Employed"><b>Employment Details</b></label> <br>
+                        <input type="radio" required name="Self_Employed" value="0" ><label for="yes">&nbsp;yes&nbsp;</label>
+                        <input type="radio" required name="Self_Employed" value="1" ><label for="No">&nbsp;no&nbsp;</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="ApplicantIncome"><b>ApplicantIncome</b></label><br>
+                        <input type="text" name="ApplicantIncome" placeholder="Enter Applicant Income">
+                    </div>
+                    <div class="form-group">
+                        <label for="CoapplicantIncome"><b>CoapplicantIncome</b></label><br>
+                        <input type="text" name="CoapplicantIncome" placeholder="Enter Coapplicant Income">
+                    </div>
+	   <div class="form-group">
+                        <label for="LoanAmount"><b>LoanAmount</b></label><br>
+                        <input type="text" name="LoanAmount" placeholder="Enter LoanAmount">
+                    </div>
+	    <div class="form-group">
+                        <label for="Loan_Amount_Term"> <b> Loan_Amount_Term</b></label><br>
+                        <input type="number" name="Loan_Amount_Term" placeholder="Enter Loan_Amount_Term value" step="1" min="0" max="10" class="form-control" required> 
+                    </div>
+	    <div class="form-group">
+                        <label for="Credits"><b>Credit_History</b></label> <br>
+                        <input type="radio" required name="Credits" value="0" required><label for="0">&nbsp;0&nbsp;</label>
+                        <input type="radio" required name="Credits" value="1" ><label for="1">&nbsp;>1&nbsp;</label>
+                    </div>
+
+	     <div class="form-group">
+                        <label for="Property"><b>Property_Area</b></label> <br>
+                        <input type="radio" required name="Urban" value="0" required><label for="0">&nbsp;Urban&nbsp;</label>
+                        <input type="radio" required name="Urban" value="1" ><label for=">1">&nbsp;Rural&nbsp;</label>
+	         <input type="radio" required name="Urban" value="2" ><label for=">1">&nbsp;SemiUrban&nbsp;</label>
+                    </div>
+	     
+                    
+                    <div class="container">
+                        <button class="btn btn-success btn-lg" type="submit">Submit</button>
+                        <button class="btn btn-warning btn-lg float-right" type="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+  </div>
+{% endblock%}
